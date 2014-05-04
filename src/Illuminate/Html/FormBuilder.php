@@ -187,18 +187,21 @@ class FormBuilder {
 	 * @param  string  $name
 	 * @param  string  $value
 	 * @param  array   $options
-	 * @param  bool    $escape_html
+	 * @param  bool    $escapeHtml
 	 * @return string
 	 */
-	public function label($name, $value = null, $options = array(), $escape_html = true)
+	public function label($name, $value = null, $options = array(), $escapeHtml = true)
 	{
 		$this->labels[] = $name;
 
 		$options = $this->html->attributes($options);
 
-		if($escape_html) {
+		if ($escapeHtml) 
+		{
 			$value = e($this->formatLabel($name, $value));
-		} else {
+		}
+		 else 
+		{
 			$value = $this->formatLabel($name, $value);
 		}
 		
